@@ -133,9 +133,6 @@ router.get('/balance', async (req, res, next) => {
         try {
             let result = item.resp.data;
 
-            result = result.results != null ? result.results : result;
-            result = result.data != null ? result.data : result;
-
             const patterns = item.formDict.response.split(",");
             balance = analysisResponse(result, patterns, 0, item.formDict);
         }
